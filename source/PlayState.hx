@@ -183,8 +183,16 @@ class PlayState extends MusicBeatState
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
 	public var camOther:FlxCamera;
-	public var cameraSpeed:Float = 1;
-
+	public var cameraSpeed:Float = 1;(healthBar.percent < 20) {
+            iconP2.animation.curAnim.curFrame = 2;
+            iconP1.animation.curAnim.curFrame = 1;
+        } else if (healthBar.percent > 80) {
+            iconP2.animation.curAnim.curFrame = 1;
+            iconP1.animation.curAnim.curFrame = 2;
+        } else {
+            iconP2.animation.curAnim.curFrame = 0;
+            iconP1.animation.curAnim.curFrame = 0;
+        }
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
 	var dialogueJson:DialogueFile = null;
 
